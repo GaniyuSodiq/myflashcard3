@@ -1,5 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
+import { useState } from "react";
 
 const questionsList = [
   {
@@ -21,7 +22,24 @@ const questionsList = [
   },
 ];
 function App() {
-  return <div className="App"></div>;
+  const [selectedId, setSelectedId] = useState(0);
+
+  function handleClick(id) {
+    setSelectedId(id === selectedId ? 0 : id);
+  }
+
+  return (
+    <div className="App">
+      {questionsList.map((question) => (
+        <div
+          onClick={() => handleClick(question.id)}
+          className={`qbox ${question.id === selectedId ? "answer" : ""}`}
+        >
+          {question.id === selectedId ? question.answer : question.question}
+        </div>
+      ))}
+    </div>
+  );
 }
 
 export default App;

@@ -1,5 +1,23 @@
 .App {
   text-align: center;
+  display: grid;
+  max-width: 900px;
+  margin: 0 auto;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.qbox {
+  border: 1px #61dafb solid;
+  padding: 40px;
+  margin: 5px;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.answer {
+  background-color: #61dafb;
 }
 
 .App-logo {
